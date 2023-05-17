@@ -1,0 +1,31 @@
+version: '3'
+services:
+  container1:
+    image: docker-container1-image
+    container_name: docker-container1-container
+    build:
+      context: ./DockerContainer1
+      dockerfile: Dockerfile
+    volumes:
+      - ./file.dat:/app/volume/file.dat
+    ports:
+      - 6000:6000
+    networks:
+      - my-network
+
+  container2:
+    image: docker-container2-image
+    container_name: docker-container2-container
+    build:
+      context: ./DockerContainer2
+      dockerfile: Dockerfile
+    volumes:
+      - ./file.dat:/app/volume/file.dat
+    ports:
+      - 7000:7000
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge

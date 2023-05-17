@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.Scanner;
 
 public class FileValidator {
     public static String validateFileName(String fileName, String productName) throws IOException {
@@ -14,7 +13,7 @@ public class FileValidator {
         } else if (!fileName.equals("file.dat")) {
             return "File not found.";
         } else {
-            URL url = new URL("http://localhost:7000/getValue");
+            URL url = new URL("http://docker-container2-container:7000/getValue");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
 
