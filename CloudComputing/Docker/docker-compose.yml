@@ -1,4 +1,3 @@
-version: '3'
 services:
   container1:
     image: docker-container1-image
@@ -7,7 +6,7 @@ services:
       context: ./DockerContainer1
       dockerfile: Dockerfile
     volumes:
-      - ./file.dat:/app/volume/file.dat
+      - .:/app/volume/
     ports:
       - 6000:6000
     networks:
@@ -20,7 +19,7 @@ services:
       context: ./DockerContainer2
       dockerfile: Dockerfile
     volumes:
-      - ./file.dat:/app/volume/file.dat
+      - .:/app/volume/
     ports:
       - 7000:7000
     networks:
