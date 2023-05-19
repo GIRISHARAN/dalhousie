@@ -1,49 +1,51 @@
 package docker.container;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class FileValidator {
+
     public static String validateFileName(String fileName, String productName) throws IOException {
 
-        System.out.println("File Name :" + fileName);
+        ObjectMapper objectMapper = new ObjectMapper();
+
         if (fileName == null) {
-            return "Invalid JSON input.";
+
+            FileResponse response = new FileResponse(fileName,
+                    "Input file not in CSV format.");
+
+            return objectMapper.writeValueAsString(response);
         }
 
         String filePath = "/app/volume/" + fileName;
-        System.out.println("File Path:" + filePath + "File Name" + fileName);
 
         File file = new File(filePath);
 
         if (file.exists()) {
 
-            System.out.println("File exists!");
+            String container2URL = ("http://docker-container2-container:7000/performCalculation");
 
-            URL url = new URL("http://docker-container2-container:7000/getValue");
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setRequestMethod("GET");
+            UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromHttpUrl(container2URL)
+                    .queryParam("file", fileName)
+                    .queryParam("product", productName);
+            String urlWithParams = uriBuilder.toUriString();
 
-            int responseCode = conn.getResponseCode();
+            RestTemplate restTemplate = new RestTemplate();
+            ResponseEntity<String> responseEntity = restTemplate.getForEntity(urlWithParams, String.class);
 
-            String response;
-            try (BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()))) {
-                StringBuilder responseBuilder = new StringBuilder();
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    responseBuilder.append(line);
-                }
-                response = responseBuilder.toString();
-            }
+            String responseBody = responseEntity.getBody();
 
-            // Process the response from Application B
-            System.out.println("Value from Application B: " + responseCode + " - " + response);
-            return response;
+            System.out.println("Response Body: " + responseBody);
+
+            return responseBody;
         }
+
         return "Check your input";
     }
 }
