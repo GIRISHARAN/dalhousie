@@ -11,11 +11,11 @@ public class Controller {
     public CalculationResponse calculateValue(@RequestParam("file") String fileName,
             @RequestParam("product") String productName) throws IOException {
 
-        // String filePath = "/app/volume/" + fileName;
+        String filePath = "/app/volume/" + fileName;
 
-        String filePath =
-        "C:\\Users\\AVuser\\Desktop\\GiriSharanReddy\\dalhousie\\CloudComputing\\Docker\\"
-        + fileName;
+        // String filePath =
+        // "C:\\Users\\AVuser\\Desktop\\GiriSharanReddy\\dalhousie\\CloudComputing\\Docker\\"
+        // + fileName;
 
         if (CSV_Validator.isCSV(filePath)) {
             int totalAmount = AmountCalculator.calculateTotalAmount(filePath, productName);
