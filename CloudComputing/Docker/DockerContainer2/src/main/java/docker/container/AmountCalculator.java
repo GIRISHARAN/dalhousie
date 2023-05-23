@@ -15,12 +15,12 @@ public class AmountCalculator {
                     isFirstLine = false;
                     continue; // Skip the header line
                 }
-                String[] values = line.split(",");
+                String[] values = line.strip().split(",");
                 if (values.length == 2) {
-                    String product = values[0];
+                    String product = values[0].strip();
                     int amount;
                     try {
-                        amount = Math.abs(Integer.parseInt(values[1].trim()));
+                        amount = Math.abs(Integer.parseInt(values[1].strip().trim()));
                     } catch (NumberFormatException e) {
                         System.out.println("Invalid amount in the file.");
                         return -1;

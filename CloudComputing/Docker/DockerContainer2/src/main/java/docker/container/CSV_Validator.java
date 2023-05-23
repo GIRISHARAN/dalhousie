@@ -9,7 +9,7 @@ public class CSV_Validator {
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                if (!line.contains(",")) {
+                if (!line.strip().contains(",")) {
                     return false;
                 }
             }

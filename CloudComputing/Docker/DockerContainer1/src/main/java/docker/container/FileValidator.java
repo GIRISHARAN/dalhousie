@@ -48,8 +48,10 @@ public class FileValidator {
             System.out.println("Response Body: " + responseBody);
 
             return responseBody;
-        }
+        } else {
 
-        return "Check your input";
+            FileResponse response = new FileResponse(fileName, "File not found.");
+            return objectMapper.writeValueAsString(response);
+        }
     }
 }

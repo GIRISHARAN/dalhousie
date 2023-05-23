@@ -1,9 +1,9 @@
 product,amount
-wheat,-1000
-wheat,20
-oats,5
-barley,6
-barley,12
-oats,10
-fruit,17
-wheat,100
+	wheat,-1000
+	wheat,20
+	oats,5
+	barley,6
+	barley,12
+	oats,10
+	fruit,17
+	wheat,100
