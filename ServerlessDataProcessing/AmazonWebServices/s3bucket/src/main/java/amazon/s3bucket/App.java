@@ -26,7 +26,7 @@ public class App {
 
         // Code to select a particular profile present in the .aws/credential file
         ProfileCredentialsProvider credentialsProvider = ProfileCredentialsProvider.builder()
-                .profileName("accessed-June-06-2023-2")
+                .profileName("accessed-June-07-2023")
                 .build();
 
         // Create an S3 client using the specified region and credentials
