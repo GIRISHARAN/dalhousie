@@ -18,7 +18,7 @@ public class FileValidator {
         if (fileName == null) {
 
             FileResponse response = new FileResponse(fileName,
-                    "Input file not in CSV format.");
+                    "Invalid JSON input.");
 
             return objectMapper.writeValueAsString(response);
         }
@@ -33,7 +33,7 @@ public class FileValidator {
 
         if (file.exists()) {
 
-            String container2URL = ("http://docker-container2-container:7000/performCalculation");
+            String container2URL = ("http://docker-container2-container:8001/performCalculation");
 
             UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromHttpUrl(container2URL)
                     .queryParam("file", fileName)
