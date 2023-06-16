@@ -1,0 +1,9 @@
+pip3 install grpcio-tools
+
+pip3 install --upgrade pip
+
+-m grpc_tools.protoc -I../../protos --python_out=. --pyi_out=. --grpc_python_out=. computeandstorage.proto
+
+protoc --python_out=. your_proto_file.proto
+
+python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. computeandstorage.proto

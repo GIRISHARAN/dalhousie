@@ -9,6 +9,7 @@ public class Ec2Operations extends computeandstorage.EC2OperationsGrpc.EC2Operat
                           io.grpc.stub.StreamObserver<computeandstorage.Computeandstorage.StoreReply> responseObserver) {
         System.out.println(request.getData());
         computeandstorage.Computeandstorage.StoreReply storeReply = computeandstorage.Computeandstorage.StoreReply.newBuilder().setS3Uri(S3Operations.insertDataToS3Object(request.getData())).build();
+        // computeandstorage.Computeandstorage.StoreReply storeReply = computeandstorage.Computeandstorage.StoreReply.newBuilder().setS3Uri("helllo World").build();
         responseObserver.onNext(storeReply);
         responseObserver.onCompleted();
     }
