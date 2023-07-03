@@ -1,0 +1,25 @@
+services:
+  container1:
+    image: girisharanreddy/docker-c1-image:version2
+    container_name: docker-container1-container
+    volumes:
+      - .:/app/volume/
+    ports:
+      - 6000:6000
+    networks:
+      - my-network
+
+  container2:
+    image: girisharanreddy/docker-c2-image:version2
+    container_name: docker-container2-container
+    volumes:
+      - .:/app/volume/
+    ports:
+      - 8001:8001
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    name: my-network-name
+    driver: bridge

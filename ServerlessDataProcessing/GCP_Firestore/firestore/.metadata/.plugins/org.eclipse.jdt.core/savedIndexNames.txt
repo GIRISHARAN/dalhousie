@@ -1,0 +1,4 @@
+INDEX VERSION 1.132+C:\Users\AVuser\Downloads\firestore\.metadata\.plugins\org.eclipse.jdt.core
+1067094681.index
+1865797976.index
+4273429037.index
