@@ -51,11 +51,15 @@ public class Registration {
              * @throws IOException If an I/O error occurs while initializing Firestore options.
              * @throws RuntimeException If an exception occurs during the creation of Firestore options.
              */
+
+            GoogleCredentials googleCredentials = GoogleCredentials.fromStream(new FileInputStream("C:\\Users\\AVuser\\Desktop\\GiriSharanReddy\\dalhousie\\ServerlessDataProcessing\\GCP_Firestore\\firestore\\src\\avid-shape-390123-a4c2e12795ea.json"));
+
             FirestoreOptions firestoreOptions = FirestoreOptions
                     .getDefaultInstance()
                     .toBuilder()
                     .setProjectId(myProjectId)
-                    .setCredentials(GoogleCredentials.getApplicationDefault())
+                    // .setCredentials(GoogleCredentials.getApplicationDefault())
+                    .setCredentials(googleCredentials)
                     .build();
 
             /**

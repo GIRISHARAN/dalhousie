@@ -1,0 +1,17 @@
+# Code based on : https://cloud.google.com/artifact-registry/docs/configure-cloud-build
+
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'us-west2-docker.pkg.dev/$PROJECT_ID/artifact/dockerimage', '.']
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'us-west2-docker.pkg.dev/$PROJECT_ID/artifact/dockerimage']
+
+  - name: 'gcr.io/cloud-builders/gke-deploy'
+    args:
+      - apply
+      - '-f'
+      - 'deployment.yaml'
+      - '--project=$PROJECT_ID'
+      - '--location=us-west2-a'
+      - '--cluster=cluster-1'

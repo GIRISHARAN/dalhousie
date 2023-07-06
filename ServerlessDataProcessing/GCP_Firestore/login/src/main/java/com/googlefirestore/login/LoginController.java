@@ -36,7 +36,7 @@ public class LoginController {
     @PostMapping("/validateUser")
     private String saveNewUser(@ModelAttribute("loginUser") LoginDetails loginDetails, Model model) throws Exception {
         if (ValidateUser.loginUserValidation(loginDetails)) {
-            return "redirect:https://home-image-5rpozvvtfa-uc.a.run.app/homes?email=" + loginDetails.getEmail();
+            return "redirect:https://home-5rpozvvtfa-uc.a.run.app/homes?email=" + loginDetails.getEmail();
         } else {
             return "redirect:/";
         }

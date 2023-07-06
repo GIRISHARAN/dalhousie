@@ -1,3 +1,13 @@
+/*
+Code is based on the reference :
+ [1]	“Create a Firestore database by using a server client library,” Google Cloud. [Online].
+        Available: https://cloud.google.com/firestore/docs/create-database-server-client-library. [Accessed: 03-Jul-2023].
+
+ [2]	“Getting data,” Google Cloud. [Online].
+        Available: https://cloud.google.com/firestore/docs/query-data/get-data. [Accessed: 03-Jul-2023].
+*/
+
+
 package com.gcp.firestore;
 
 import com.google.api.core.ApiFuture;

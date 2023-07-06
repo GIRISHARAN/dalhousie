@@ -6,7 +6,7 @@ Code is based on the reference :
         Available: https://cloud.google.com/firestore/docs/create-database-server-client-library. [Accessed: 03-Jul-2023].
 */
 
-// import java.io.FileInputStream;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -22,16 +22,16 @@ public class GoogleCredentialsClass {
 
     public Firestore fireStoreInstance() throws FileNotFoundException, IOException {
 
-        // GoogleCredentials googleCredentials = GoogleCredentials.fromStream(
-        //         new FileInputStream("C:\\Users\\AVuser\\Desktop\\firestore\\src\\avid-shape-390123-a4c2e12795ea.json"));
+        GoogleCredentials googleCredentials = GoogleCredentials.fromStream(
+                new FileInputStream("C:\\Users\\AVuser\\Desktop\\firestore\\src\\avid-shape-390123-a4c2e12795ea.json"));
 
         // Initialize an instance of Firestore:
         FirestoreOptions firestoreOptions = FirestoreOptions
                 .getDefaultInstance()
                 .toBuilder()
                 .setProjectId(myProjectId)
-                // .setCredentials(googleCredentials)
-                .setCredentials(GoogleCredentials.getApplicationDefault())
+                .setCredentials(googleCredentials)
+                // .setCredentials(GoogleCredentials.getApplicationDefault())
                 .build();
 
         Firestore firestoreDatabase = firestoreOptions.getService();

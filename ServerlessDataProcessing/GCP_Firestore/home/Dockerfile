@@ -12,7 +12,7 @@ COPY --from=build  /app/target/home-jar.jar .
 
 COPY src /app/src
 
-EXPOSE 9101
+EXPOSE 9201
 
 #https://medium.com/datamindedbe/application-default-credentials-477879e31cb5
 ENV GOOGLE_APPLICATION_CREDENTIALS /app/src/avid-shape-390123-a4c2e12795ea.json
