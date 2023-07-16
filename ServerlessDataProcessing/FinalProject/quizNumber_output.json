@@ -1,0 +1,92 @@
+{
+   "questions":[
+      {
+         "uuidKey":"00f2dee5-22ac-11ee-8a82-17fade5c179d",
+         "questionCategory":"space",
+         "questionLevel":"easy",
+         "correctAnswer":"NASA",
+         "options":[
+            "ESA (European Space Agency)",
+            "NASA",
+            "Roscosmos",
+            "SpaceX"
+         ],
+         "question":"Which space agency successfully landed the Curiosity rover on Mars?"
+      },
+      {
+         "uuidKey":"4dec1214-22ac-11ee-a9c5-97914c8638e9",
+         "questionCategory":"space",
+         "questionLevel":"easy",
+         "correctAnswer":"Sirius",
+         "options":[
+            "Betelgeuse",
+            "Polaris",
+            "Proxima Centauri",
+            "Sirius"
+         ],
+         "question":"What is the name of the brightest star in the night sky?"
+      },
+      {
+         "uuidKey":"5685f4e0-e5af-4ad6-a3f1-cf4640697509",
+         "questionCategory":"space",
+         "questionLevel":"easy",
+         "correctAnswer":"Indian Space Research Organisation",
+         "options":[
+            "Indian Space Research Organisation",
+            "Indonesian Space Research Organisation"
+         ],
+         "question":"What is ISRO full form?"
+      },
+      {
+         "uuidKey":"6834e469-22ac-11ee-84bc-b1f0d689b241",
+         "questionCategory":"space",
+         "questionLevel":"easy",
+         "correctAnswer":"Hubble Space Telescope",
+         "options":[
+            "Hubble Space Telescope",
+            "James Webb Space Telescope",
+            "Kepler Space Telescope",
+            "Spitzer Space Telescope"
+         ],
+         "question":"Which space telescope was launched by NASA in 1990 and has provided stunning images of deep space?"
+      },
+      {
+         "uuidKey":"891f9a58-3848-4172-9176-61ccd4b01cd2",
+         "questionCategory":"space",
+         "questionLevel":"easy",
+         "correctAnswer":"Apollo 11",
+         "options":[
+            "Apollo 11",
+            "Hubble Space Telescope",
+            "kanna"
+         ],
+         "question":"Which spacecraft was the first to land humans on the Moon?"
+      },
+      {
+         "uuidKey":"dcd49ce4-22aa-11ee-83f3-85d89ddc815f",
+         "questionCategory":"space",
+         "questionLevel":"easy",
+         "correctAnswer":"Mars",
+         "options":[
+            "Jupiter",
+            "Mars",
+            "Saturn",
+            "Venus"
+         ],
+         "question":"Which planet is known as the 'Red Planet'?"
+      },
+      {
+         "uuidKey":"e78aa87b-22ab-11ee-ad2d-6f23f85538ca",
+         "questionCategory":"space",
+         "questionLevel":"easy",
+         "correctAnswer":"Titan",
+         "options":[
+            "Europa",
+            "Ganymede",
+            "Io",
+            "Titan"
+         ],
+         "question":"What is the name of the largest moon in our solar system?"
+      }
+   ]
+}

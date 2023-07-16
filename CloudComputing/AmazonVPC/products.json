@@ -1,0 +1,14 @@
+{
+	"products": [
+		{
+			"name": "appple",
+			"price": "10",
+			"availability": true
+		},
+		{
+			"name": "banana",
+			"price": "20",
+			"availability": true
+		}
+	]
+}
