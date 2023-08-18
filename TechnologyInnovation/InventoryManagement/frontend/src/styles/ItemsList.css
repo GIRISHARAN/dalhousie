@@ -1,0 +1,33 @@
+.itemsList {
+  width: 80%;
+  padding: 4em;
+  text-align: center;
+  /* margin: auto; */
+  border-left: solid rgb(26, 3, 88);
+  height: 100%;
+}
+
+.storeHeading {
+  padding-bottom: 1em;
+}
+
+.no-availability {
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#hide-on-mobile {
+  display: none; /* By default, display the button */
+}
+
+@media (max-width: 767px) {
+  #hide-on-mobile {
+    display: block;
+    margin: 0.6em;
+  }
+}

@@ -1,0 +1,10 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/custom-inventory/custom-inventory:latest', '.']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/custom-inventory/custom-inventory:latest']
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args: ['run', 'deploy', 'custom-inventory', '--image', 'gcr.io/$PROJECT_ID/custom-inventory/custom-inventory:latest', '--region', 'us-west2']
+images:
+  - gcr.io/$PROJECT_ID/custom-inventory/custom-inventory:latest

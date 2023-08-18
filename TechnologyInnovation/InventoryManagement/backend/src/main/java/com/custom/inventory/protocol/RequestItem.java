@@ -1,0 +1,58 @@
+package com.custom.inventory.protocol;
+
+public class RequestItem {
+
+    private String name;
+    private String email;
+    private String zoneName;
+    private String itemName;
+    private Integer count;
+
+    public RequestItem(String name, String email, String zoneName, String itemName, Integer count) {
+        this.name = name;
+        this.email = email;
+        this.zoneName = zoneName;
+        this.itemName = itemName;
+        this.count = count;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getZoneName() {
+        return zoneName;
+    }
+
+    public void setZoneName(String zoneName) {
+        this.zoneName = zoneName;
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
+
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+}

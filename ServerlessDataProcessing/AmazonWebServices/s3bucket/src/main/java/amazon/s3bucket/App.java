@@ -19,14 +19,14 @@ public class App {
         final String sourcePath = "C:\\Users\\AVuser\\Desktop\\GiriSharanReddy\\dalhousie\\ServerlessDataProcessing\\AmazonWebServices\\";
 
         // Specify the name of the bucket
-        final String bucketName = "girisharan-s3bucket-serverless";
+        final String bucketName = "chat-application-profile-picture";
 
         // Specify the region for the bucket
         Region selectedRegion = Region.US_EAST_1;
 
         // Code to select a particular profile present in the .aws/credential file
         ProfileCredentialsProvider credentialsProvider = ProfileCredentialsProvider.builder()
-                .profileName("accessed-June-07-2023")
+                .profileName("accessed-August-16-2023")
                 .build();
 
         // Create an S3 client using the specified region and credentials
@@ -42,8 +42,8 @@ public class App {
 
         try {
             // Attempt to create the bucket
-            CreateBucketResponse createBucketResponse = s3Client.createBucket(createBucketRequest);
-            System.out.println(createBucketResponse.toString());
+//            CreateBucketResponse createBucketResponse = s3Client.createBucket(createBucketRequest);
+//            System.out.println(createBucketResponse.toString());
 
             // Call a method to upload a file to the created bucket
             FileOperation.uploadFile(bucketName, s3Client, sourcePath);

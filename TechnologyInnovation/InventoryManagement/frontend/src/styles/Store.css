@@ -1,0 +1,26 @@
+.store {
+  display: flex;
+  /* height: 100vh; */
+  /* background-color: #f0f8ff; */
+}
+
+.mobileView {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .zoneSection {
+    display: none; /* Hide the button on screens with a maximum width of 767 pixels (mobile devices) */
+  }
+
+  .zoneSectionMobile {
+    width: 80%;
+    padding: 2em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .mobileView {
+    display: block;
+  }
+}

@@ -1,0 +1,26 @@
+# Step 1: Choose a base image
+FROM node:14-alpine
+
+# Step 2: Set the working directory inside the container
+WORKDIR /app
+
+# Step 3: Copy package.json and package-lock.json (or yarn.lock if you're using Yarn)
+COPY package*.json ./
+
+# Step 4: Install dependencies
+RUN npm install --production
+
+# Step 5: Copy the rest of the application code (excluding files and directories specified in .dockerignore)
+COPY . .
+
+# Step 6: Build the React app (assuming you use npm for the build, adjust accordingly for yarn)
+RUN npm run build
+
+# Step 7: Install a lightweight web server to serve the built React app
+RUN npm install -g serve
+
+# Step 8: Expose port 3000 for the React app to listen on
+EXPOSE 3000
+
+# Step 9: Set the command to run the application using 'serve'
+CMD ["serve", "-s", "build", "-l", "3000"]

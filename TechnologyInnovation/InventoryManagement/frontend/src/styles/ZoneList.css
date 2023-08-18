@@ -1,0 +1,14 @@
+.zoneSection {
+  width: 20%;
+  padding: 2em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.zonesList {
+  padding: 2em 0em 2em 0em;
+}
+.zoneSectionMobile {
+  display: none;
+}
